@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "PrairieTest → Google Calendar",
+  "version": "1.0.0",
+  "description": "Adds an 'Add to Google Calendar' button to your PrairieTest exam reservations.",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.prairietest.com/*"
+      ],
+      "js": ["content.js"],
+      "css": ["styles.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["icons/*.png"],
+      "matches": ["*://*.prairietest.com/*"]
+    }
+  ]
+}
